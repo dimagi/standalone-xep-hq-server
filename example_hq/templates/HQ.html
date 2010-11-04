@@ -25,10 +25,10 @@
         <code>
             <pre>{{ xform.form }}</pre>
         </code>
-        <form method="POST" action="http://localhost:8000/xep/initiate/{{ xform.id }}/">
+        <form method="POST" action="http://localhost:8010/xep/initiate/{{ xform.id }}/">
             {% csrf_token %}
-            <input type="hidden" name="callback" value="http://localhost:8000/HQ/?xform_id={{ xform.id }}" />
-            <input type="hidden" name="editor" value="http://localhost:8001/xep/initiate/" />
+            <input type="hidden" name="callback" value="http://localhost:8010/HQ/?xform_id={{ xform.id }}" />
+            <input type="hidden" name="editor" value="http://localhost:8011/xep/initiate/" />
             
             <input type="submit" value="Start Editing" />
         </form>
