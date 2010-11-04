@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HQ Page</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+        <script>
+            /* copied from http://www.netlobo.com/url_query_string_javascript.html */
+            function gup( name )
+            {
+              name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+              var regexS = "[\\?&]"+name+"=([^&#]*)";
+              var regex = new RegExp( regexS );
+              var results = regex.exec( window.location.href );
+              if( results == null )
+                return "";
+              else
+                return results[1];
+            }
+            $(function(){
+
+            });
+        </script>
+    </head>
+    <body>
+        <code>
+            <pre>{{ xform.form }}</pre>
+        </code>
+        <form method="POST" action="http://localhost:8000/xep/initiate/{{ xform.id }}/">
+            {% csrf_token %}
+            <input type="hidden" name="callback" value="http://localhost:8000/HQ/?xform_id={{ xform.id }}" />
+            <input type="hidden" name="editor" value="http://localhost:8001/xep/initiate/" />
+            
+            <input type="submit" value="Start Editing" />
+        </form>
+        
+    </body>
+</html>
