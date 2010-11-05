@@ -106,5 +106,6 @@ COUCHDB_DATABASES = [
 
 XEP_GET_XFORM = 'example_hq.models.get_xform'
 XEP_PUT_XFORM = 'example_hq.models.put_xform'
+XEP_AUTHORIZE = 'example_hq.models.authorize_xform_edit'
 
 URL_BASE = 'http://localhost:8010'
